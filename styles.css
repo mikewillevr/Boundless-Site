@@ -1,0 +1,2559 @@
+<<<<<<< HEAD
+/* ==========================================================
+   VARIABLES
+   Design System
+========================================================== */
+
+:root {
+
+    /* ========= Brand Colours ========= */
+
+    --primary-green: #00A651;
+    --primary-green-dark: #008C45;
+    --primary-green-light: #EAF8F1;
+
+    --secondary-green: #65C466;
+
+    --white: #FFFFFF;
+
+    --background: #F8FAF9;
+
+    --surface: #FFFFFF;
+
+    --border: #E5E7EB;
+
+    --text-dark: #1F2937;
+
+    --text-medium: #4B5563;
+
+    --text-light: #6B7280;
+
+    --shadow-color: rgba(0,0,0,.08);
+
+
+
+    /* ========= Typography ========= */
+
+    --font-family: 'Inter', sans-serif;
+
+    --hero-title: 3.6rem;
+
+    --section-title: 2.2rem;
+
+    --heading: 1.6rem;
+
+    --body: 1rem;
+
+    --small: .9rem;
+
+
+
+    /* ========= Font Weight ========= */
+
+    --light: 300;
+
+    --regular: 400;
+
+    --medium: 500;
+
+    --semi-bold: 600;
+
+    --bold: 700;
+
+    --extra-bold: 800;
+
+
+
+    /* ========= Border Radius ========= */
+
+    --radius-small: 8px;
+
+    --radius-medium: 14px;
+
+    --radius-large: 22px;
+
+    --radius-xl: 32px;
+
+    --radius-pill: 999px;
+
+
+
+    /* ========= Container ========= */
+
+    --container-width: 1320px;
+
+
+
+    /* ========= Section Spacing ========= */
+
+    --section-padding: 90px;
+
+    --hero-padding: 120px;
+
+
+
+    /* ========= Shadows ========= */
+
+    --shadow-sm:
+
+        0 4px 12px rgba(0,0,0,.05);
+
+    --shadow-md:
+
+        0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-lg:
+
+        0 20px 60px rgba(0,0,0,.12);
+
+
+
+    /* ========= Animation ========= */
+
+    --transition-fast: .2s ease;
+
+    --transition: .35s ease;
+
+    --transition-slow: .55s ease;
+
+}
+/* ==========================================================
+   RESET
+   Removes browser default styling
+========================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+}
+/* ==========================================================
+   GLOBAL STYLES
+   Shared classes used throughout the website
+========================================================== */
+
+/* ---------- Main Container ---------- */
+
+.container {
+    width: min(92%, var(--container-width));
+    margin: 0 auto;
+}
+
+
+/* ---------- Standard Section ---------- */
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+
+/* ---------- Background Helpers ---------- */
+
+.bg-white {
+    background: var(--white);
+}
+
+.bg-light {
+    background: var(--background);
+}
+
+
+/* ---------- Text Helpers ---------- */
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-green {
+    color: var(--primary-green);
+}
+
+
+/* ---------- Flex Helpers ---------- */
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ---------- Grid Helper ---------- */
+
+.grid {
+    display: grid;
+}
+
+
+/* ---------- Card ---------- */
+
+.card {
+    background: var(--surface);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ---------- Smooth Transition ---------- */
+
+.transition {
+    transition: var(--transition);
+}
+
+
+/* ---------- Hide ---------- */
+
+.hidden {
+    display: none;
+}
+/* ==========================================================
+   TYPOGRAPHY
+   Headings, paragraphs and reusable text styles
+========================================================== */
+
+/* ---------- Body ---------- */
+
+body {
+    font-size: var(--body);
+    font-weight: var(--regular);
+    color: var(--text-medium);
+}
+
+
+/* ---------- Headings ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-dark);
+    font-weight: var(--bold);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--hero-title);
+text-wrap: balance;
+}
+
+h2 {
+    font-size: var(--section-title);
+}
+
+h3 {
+    font-size: var(--heading);
+}
+
+
+/* ---------- Paragraphs ---------- */
+
+p {
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+
+/* ---------- Hero Tag ---------- */
+
+.hero-tag {
+    display: inline-block;
+    padding: 8px 18px;
+
+    background: rgba(255,255,255,.18);
+
+    color: var(--white);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: var(--radius-pill);
+
+    backdrop-filter: blur(10px);
+
+    font-size: .85rem;
+    font-weight: var(--medium);
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* ---------- Section Heading ---------- */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: 1rem auto 0;
+}
+
+
+/* ---------- Small Text ---------- */
+
+.small-text {
+    font-size: var(--small);
+    color: var(--text-light);
+}
+
+
+/* ---------- Text Weight Helpers ---------- */
+
+.fw-light {
+    font-weight: var(--light);
+}
+
+.fw-regular {
+    font-weight: var(--regular);
+}
+
+.fw-medium {
+    font-weight: var(--medium);
+}
+
+.fw-semibold {
+    font-weight: var(--semi-bold);
+}
+
+.fw-bold {
+    font-weight: var(--bold);
+}
+
+.fw-extra-bold {
+    font-weight: var(--extra-bold);
+}
+/* ==========================================================
+   LAYOUT
+   Shared layout utilities used across the website
+========================================================== */
+
+/* ---------- Main Wrapper ---------- */
+
+main {
+    width: 100%;
+}
+
+
+/* ---------- Section Spacing ---------- */
+
+section {
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+
+
+/* ---------- Standard Grid ---------- */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+
+/* ---------- Flex Layouts ---------- */
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------- Spacing Utilities ---------- */
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.mb-4 { margin-bottom: 4rem; }
+
+
+/* ---------- Width Utilities ---------- */
+
+.w-100 {
+    width: 100%;
+}
+
+.max-600 {
+    max-width: 600px;
+}
+
+.max-700 {
+    max-width: 700px;
+}
+
+
+/* ---------- Position Helpers ---------- */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+
+/* ---------- Overflow ---------- */
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/* ---------- Z-Index ---------- */
+
+.z-1 {
+    z-index: 1;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+.z-10 {
+    z-index: 10;
+}
+/* ==========================================================
+   BUTTONS
+   Reusable button styles across the website
+========================================================== */
+
+/* ---------- Base Button ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+
+    padding: 14px 28px;
+
+    font-size: .95rem;
+    font-weight: var(--semi-bold);
+
+    border-radius: var(--radius-pill);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    white-space: nowrap;
+}
+
+
+/* ---------- Primary Button ---------- */
+
+.btn-primary {
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-green-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* ---------- Outline Button ---------- */
+
+.btn-outline {
+
+    background: transparent;
+
+    color: var(--primary-green);
+
+    border: 2px solid var(--primary-green);
+
+}
+
+.btn-outline:hover {
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+}
+
+
+/* ---------- White Button ---------- */
+
+.btn-white {
+
+    background: var(--white);
+
+    color: var(--primary-green);
+
+}
+
+.btn-white:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* ---------- Full Width ---------- */
+
+.btn-block {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Icon Animation ---------- */
+
+.btn i {
+
+    transition: var(--transition-fast);
+
+}
+
+.btn:hover i {
+
+    transform: translateX(4px);
+
+}
+
+
+/* ---------- Disabled ---------- */
+
+.btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+
+}
+/* ==========================================================
+   HEADER
+   Part A - Structure
+========================================================== */
+
+
+/* ---------- Top Bar ---------- */
+
+.top-bar{
+
+    background: var(--text-dark);
+
+    color: var(--white);
+
+    font-size: .85rem;
+
+    padding: .7rem 0;
+
+}
+
+
+.top-bar-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.top-left,
+.top-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+}
+
+
+.top-left span,
+.top-right span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+}
+
+
+.top-left i{
+
+    color:var(--primary-green);
+
+}
+
+
+
+/* ---------- Main Header ---------- */
+
+.main-header{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+
+    transition:var(--transition);
+
+}
+
+
+
+/* ---------- Navigation Wrapper ---------- */
+
+.nav-wrapper{
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+/* ==========================================================
+   HEADER
+   Part B - Logo, Navigation & CTA Buttons
+========================================================== */
+
+/* ---------- Logo ---------- */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--text-dark);
+    font-weight: var(--medium);
+    transition: var(--transition-fast);
+    padding: .5rem 0;
+}
+
+
+/* ---------- Animated Underline ---------- */
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--primary-green);
+
+    transition: var(--transition);
+
+}
+
+.nav-links a:hover {
+
+    color: var(--primary-green);
+
+}
+
+.nav-links a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Active Page ---------- */
+
+.nav-links a.active {
+
+    color: var(--primary-green);
+
+    font-weight: var(--semi-bold);
+
+}
+
+.nav-links a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Navigation Buttons ---------- */
+
+.nav-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+
+/* Use the reusable button system */
+
+.nav-buttons .btn {
+
+    min-width: 130px;
+
+}
+/* ==========================================================
+   HEADER
+   Part C - Final Polish
+========================================================== */
+
+
+/* ---------- Header Shadow (Applied with JavaScript) ---------- */
+
+.main-header.scrolled {
+
+    box-shadow: var(--shadow-md);
+
+    background: rgba(255,255,255,.98);
+
+}
+
+
+/* ---------- Navigation Link Refinement ---------- */
+
+.nav-links a {
+
+    letter-spacing: .2px;
+
+}
+
+.nav-links a:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ---------- CTA Buttons ---------- */
+
+.nav-buttons .btn {
+
+    padding: 12px 22px;
+
+}
+
+
+/* ---------- Smooth Logo Animation ---------- */
+
+.logo img {
+
+    transition: var(--transition);
+
+}
+
+.logo:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* ---------- Top Bar ---------- */
+
+.top-bar span {
+
+    transition: var(--transition-fast);
+
+}
+
+.top-bar span:hover {
+
+    color: var(--primary-green-light);
+
+}
+/* ==========================================================
+   HERO
+   Part A - Structure
+========================================================== */
+
+/* ---------- Hero Section ---------- */
+
+.devices-hero {
+
+    position: relative;
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: var(--hero-padding) 0;
+
+}
+
+
+/* ---------- Background Image ---------- */
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("assets/images/phones.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    z-index: 1;
+
+}
+
+
+/* ---------- Green Overlay ---------- */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,25,10,.82) 0%,
+            rgba(0,80,40,.62) 45%,
+            rgba(0,166,81,.28) 100%
+        );
+
+    z-index: 2;
+
+}
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+}
+
+
+/* ---------- Left Content ---------- */
+
+.hero-left {
+
+    max-width: 640px;
+
+    color: var(--white);
+
+}
+
+
+/* ---------- Hero Text ---------- */
+
+.hero-left h1 {
+
+    color: var(--white);
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+.hero-left p {
+
+    color: rgba(255,255,255,.92);
+
+    max-width: 560px;
+
+}
+/* ==========================================================
+   HERO
+   Part B - Content & Search
+========================================================== */
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+/* ---------- Hero Tag ---------- */
+
+.hero-tag {
+
+    align-self: flex-start;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+/* ---------- Hero Heading ---------- */
+
+.hero-left h1 {
+
+    font-size: clamp(3rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 1.5rem;
+
+    max-width: 700px;
+
+}
+
+
+/* ---------- Hero Paragraph ---------- */
+
+.hero-left p {
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 2.5rem;
+
+}
+
+
+/* ---------- Search Container ---------- */
+
+.hero-search {
+
+    display: flex;
+
+    align-items: center;
+
+    background: rgba(255,255,255,.95);
+
+    border-radius: var(--radius-pill);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-lg);
+
+    max-width: 620px;
+
+}
+
+
+/* ---------- Search Icon ---------- */
+
+.hero-search i {
+
+    padding-left: 1.5rem;
+
+    color: var(--text-light);
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ---------- Search Input ---------- */
+
+.hero-search input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    padding: 18px 20px;
+
+    font-size: 1rem;
+
+    color: var(--text-dark);
+
+}
+
+/* ---------- Placeholder ---------- */
+
+.hero-search input::placeholder {
+
+    color: var(--text-light);
+
+}
+
+/* ---------- Search Button ---------- */
+
+.hero-search button {
+
+    border: none;
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    padding: 18px 28px;
+
+    font-weight: var(--semi-bold);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.hero-search button:hover {
+
+    background: var(--primary-green-dark);
+
+}
+/* ==========================================================
+   HERO
+   Part C - Spacing & Final Polish
+========================================================== */
+
+
+/* ---------- Hero Vertical Rhythm ---------- */
+
+.hero-left > * {
+
+    margin-left: 0;
+
+}
+
+.hero-tag {
+
+    margin-bottom: 1.25rem;
+
+}
+
+.hero-left h1 {
+
+    margin-bottom: 1.5rem;
+
+}
+
+.hero-left p {
+
+    margin-bottom: 2rem;
+
+}
+
+.hero-search {
+
+    margin-top: 1rem;
+
+}
+
+
+/* ---------- Hero Width ---------- */
+
+.hero-left {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Hero Search Hover ---------- */
+
+.hero-search {
+
+    transition: var(--transition);
+
+}
+
+.hero-search:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-xl);
+
+}
+
+
+/* ---------- Search Button ---------- */
+
+.hero-search button {
+
+    white-space: nowrap;
+
+}
+
+
+/* ---------- Hero Container ---------- */
+
+.devices-hero .container {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 80vh;
+
+}
+
+
+/* ---------- Better Text Balance ---------- */
+
+.hero-left p {
+
+    max-width: 600px;
+
+}
+
+
+/* ---------- Hero Fade In ---------- */
+
+.hero-content {
+
+    animation: fadeUp .8s ease;
+
+}
+=======
+/* ==========================================================
+   VARIABLES
+   Design System
+========================================================== */
+
+:root {
+
+    /* ========= Brand Colours ========= */
+
+    --primary-green: #00A651;
+    --primary-green-dark: #008C45;
+    --primary-green-light: #EAF8F1;
+
+    --secondary-green: #65C466;
+
+    --white: #FFFFFF;
+
+    --background: #F8FAF9;
+
+    --surface: #FFFFFF;
+
+    --border: #E5E7EB;
+
+    --text-dark: #1F2937;
+
+    --text-medium: #4B5563;
+
+    --text-light: #6B7280;
+
+    --shadow-color: rgba(0,0,0,.08);
+
+
+
+    /* ========= Typography ========= */
+
+    --font-family: 'Inter', sans-serif;
+
+    --hero-title: 3.6rem;
+
+    --section-title: 2.2rem;
+
+    --heading: 1.6rem;
+
+    --body: 1rem;
+
+    --small: .9rem;
+
+
+
+    /* ========= Font Weight ========= */
+
+    --light: 300;
+
+    --regular: 400;
+
+    --medium: 500;
+
+    --semi-bold: 600;
+
+    --bold: 700;
+
+    --extra-bold: 800;
+
+
+
+    /* ========= Border Radius ========= */
+
+    --radius-small: 8px;
+
+    --radius-medium: 14px;
+
+    --radius-large: 22px;
+
+    --radius-xl: 32px;
+
+    --radius-pill: 999px;
+
+
+
+    /* ========= Container ========= */
+
+    --container-width: 1320px;
+
+
+
+    /* ========= Section Spacing ========= */
+
+    --section-padding: 90px;
+
+    --hero-padding: 120px;
+
+
+
+    /* ========= Shadows ========= */
+
+    --shadow-sm:
+
+        0 4px 12px rgba(0,0,0,.05);
+
+    --shadow-md:
+
+        0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-lg:
+
+        0 20px 60px rgba(0,0,0,.12);
+
+
+
+    /* ========= Animation ========= */
+
+    --transition-fast: .2s ease;
+
+    --transition: .35s ease;
+
+    --transition-slow: .55s ease;
+
+}
+/* ==========================================================
+   RESET
+   Removes browser default styling
+========================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    width: 100%;
+}
+
+section {
+    width: 100%;
+}
+/* ==========================================================
+   GLOBAL STYLES
+   Shared classes used throughout the website
+========================================================== */
+
+/* ---------- Main Container ---------- */
+
+.container {
+    width: min(92%, var(--container-width));
+    margin: 0 auto;
+}
+
+
+/* ---------- Standard Section ---------- */
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+
+/* ---------- Background Helpers ---------- */
+
+.bg-white {
+    background: var(--white);
+}
+
+.bg-light {
+    background: var(--background);
+}
+
+
+/* ---------- Text Helpers ---------- */
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-green {
+    color: var(--primary-green);
+}
+
+
+/* ---------- Flex Helpers ---------- */
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ---------- Grid Helper ---------- */
+
+.grid {
+    display: grid;
+}
+
+
+/* ---------- Card ---------- */
+
+.card {
+    background: var(--surface);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ---------- Smooth Transition ---------- */
+
+.transition {
+    transition: var(--transition);
+}
+
+
+/* ---------- Hide ---------- */
+
+.hidden {
+    display: none;
+}
+/* ==========================================================
+   TYPOGRAPHY
+   Headings, paragraphs and reusable text styles
+========================================================== */
+
+/* ---------- Body ---------- */
+
+body {
+    font-size: var(--body);
+    font-weight: var(--regular);
+    color: var(--text-medium);
+}
+
+
+/* ---------- Headings ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-dark);
+    font-weight: var(--bold);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--hero-title);
+text-wrap: balance;
+}
+
+h2 {
+    font-size: var(--section-title);
+}
+
+h3 {
+    font-size: var(--heading);
+}
+
+
+/* ---------- Paragraphs ---------- */
+
+p {
+    color: var(--text-medium);
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+
+/* ---------- Hero Tag ---------- */
+
+.hero-tag {
+    display: inline-block;
+    padding: 8px 18px;
+
+    background: rgba(255,255,255,.18);
+
+    color: var(--white);
+
+    border: 1px solid rgba(255,255,255,.25);
+
+    border-radius: var(--radius-pill);
+
+    backdrop-filter: blur(10px);
+
+    font-size: .85rem;
+    font-weight: var(--medium);
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* ---------- Section Heading ---------- */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: 1rem auto 0;
+}
+
+
+/* ---------- Small Text ---------- */
+
+.small-text {
+    font-size: var(--small);
+    color: var(--text-light);
+}
+
+
+/* ---------- Text Weight Helpers ---------- */
+
+.fw-light {
+    font-weight: var(--light);
+}
+
+.fw-regular {
+    font-weight: var(--regular);
+}
+
+.fw-medium {
+    font-weight: var(--medium);
+}
+
+.fw-semibold {
+    font-weight: var(--semi-bold);
+}
+
+.fw-bold {
+    font-weight: var(--bold);
+}
+
+.fw-extra-bold {
+    font-weight: var(--extra-bold);
+}
+/* ==========================================================
+   LAYOUT
+   Shared layout utilities used across the website
+========================================================== */
+
+/* ---------- Main Wrapper ---------- */
+
+main {
+    width: 100%;
+}
+
+
+/* ---------- Section Spacing ---------- */
+
+section {
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+
+
+/* ---------- Standard Grid ---------- */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+
+/* ---------- Flex Layouts ---------- */
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------- Spacing Utilities ---------- */
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.mb-4 { margin-bottom: 4rem; }
+
+
+/* ---------- Width Utilities ---------- */
+
+.w-100 {
+    width: 100%;
+}
+
+.max-600 {
+    max-width: 600px;
+}
+
+.max-700 {
+    max-width: 700px;
+}
+
+
+/* ---------- Position Helpers ---------- */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+
+/* ---------- Overflow ---------- */
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/* ---------- Z-Index ---------- */
+
+.z-1 {
+    z-index: 1;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+.z-10 {
+    z-index: 10;
+}
+/* ==========================================================
+   BUTTONS
+   Reusable button styles across the website
+========================================================== */
+
+/* ---------- Base Button ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+
+    padding: 14px 28px;
+
+    font-size: .95rem;
+    font-weight: var(--semi-bold);
+
+    border-radius: var(--radius-pill);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    white-space: nowrap;
+}
+
+
+/* ---------- Primary Button ---------- */
+
+.btn-primary {
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.btn-primary:hover {
+
+    background: var(--primary-green-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* ---------- Outline Button ---------- */
+
+.btn-outline {
+
+    background: transparent;
+
+    color: var(--primary-green);
+
+    border: 2px solid var(--primary-green);
+
+}
+
+.btn-outline:hover {
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+}
+
+
+/* ---------- White Button ---------- */
+
+.btn-white {
+
+    background: var(--white);
+
+    color: var(--primary-green);
+
+}
+
+.btn-white:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-md);
+
+}
+
+
+/* ---------- Full Width ---------- */
+
+.btn-block {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Icon Animation ---------- */
+
+.btn i {
+
+    transition: var(--transition-fast);
+
+}
+
+.btn:hover i {
+
+    transform: translateX(4px);
+
+}
+
+
+/* ---------- Disabled ---------- */
+
+.btn:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
+
+}
+/* ==========================================================
+   HEADER
+   Part A - Structure
+========================================================== */
+
+
+/* ---------- Top Bar ---------- */
+
+.top-bar{
+
+    background: var(--text-dark);
+
+    color: var(--white);
+
+    font-size: .85rem;
+
+    padding: .7rem 0;
+
+}
+
+
+.top-bar-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.top-left,
+.top-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1.5rem;
+
+}
+
+
+.top-left span,
+.top-right span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+}
+
+
+.top-left i{
+
+    color:var(--primary-green);
+
+}
+
+
+
+/* ---------- Main Header ---------- */
+
+.main-header{
+
+    position:sticky;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(0,0,0,.05);
+
+    transition:var(--transition);
+
+}
+
+
+
+/* ---------- Navigation Wrapper ---------- */
+
+.nav-wrapper{
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+/* ==========================================================
+   HEADER
+   Part B - Logo, Navigation & CTA Buttons
+========================================================== */
+
+/* ---------- Logo ---------- */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    position: relative;
+    color: var(--text-dark);
+    font-weight: var(--medium);
+    transition: var(--transition-fast);
+    padding: .5rem 0;
+}
+
+
+/* ---------- Animated Underline ---------- */
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--primary-green);
+
+    transition: var(--transition);
+
+}
+
+.nav-links a:hover {
+
+    color: var(--primary-green);
+
+}
+
+.nav-links a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Active Page ---------- */
+
+.nav-links a.active {
+
+    color: var(--primary-green);
+
+    font-weight: var(--semi-bold);
+
+}
+
+.nav-links a.active::after {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Navigation Buttons ---------- */
+
+.nav-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+
+/* Use the reusable button system */
+
+.nav-buttons .btn {
+
+    min-width: 130px;
+
+}
+/* ==========================================================
+   HEADER
+   Part C - Final Polish
+========================================================== */
+
+
+/* ---------- Header Shadow (Applied with JavaScript) ---------- */
+
+.main-header.scrolled {
+
+    box-shadow: var(--shadow-md);
+
+    background: rgba(255,255,255,.98);
+
+}
+
+
+/* ---------- Navigation Link Refinement ---------- */
+
+.nav-links a {
+
+    letter-spacing: .2px;
+
+}
+
+.nav-links a:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ---------- CTA Buttons ---------- */
+
+.nav-buttons .btn {
+
+    padding: 12px 22px;
+
+}
+
+
+/* ---------- Smooth Logo Animation ---------- */
+
+.logo img {
+
+    transition: var(--transition);
+
+}
+
+.logo:hover img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* ---------- Top Bar ---------- */
+
+.top-bar span {
+
+    transition: var(--transition-fast);
+
+}
+
+.top-bar span:hover {
+
+    color: var(--primary-green-light);
+
+}
+/* ==========================================================
+   HERO
+   Part A - Structure
+========================================================== */
+
+/* ---------- Hero Section ---------- */
+
+.devices-hero {
+
+    position: relative;
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: var(--hero-padding) 0;
+
+}
+
+
+/* ---------- Background Image ---------- */
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("assets/images/phones.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    z-index: 1;
+
+}
+
+
+/* ---------- Green Overlay ---------- */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,25,10,.82) 0%,
+            rgba(0,80,40,.62) 45%,
+            rgba(0,166,81,.28) 100%
+        );
+
+    z-index: 2;
+
+}
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+}
+
+
+/* ---------- Left Content ---------- */
+
+.hero-left {
+
+    max-width: 640px;
+
+    color: var(--white);
+
+}
+
+
+/* ---------- Hero Text ---------- */
+
+.hero-left h1 {
+
+    color: var(--white);
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+.hero-left p {
+
+    color: rgba(255,255,255,.92);
+
+    max-width: 560px;
+
+}
+/* ==========================================================
+   HERO
+   Part B - Content & Search
+========================================================== */
+
+
+/* ---------- Hero Content ---------- */
+
+.hero-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+/* ---------- Hero Tag ---------- */
+
+.hero-tag {
+
+    align-self: flex-start;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+/* ---------- Hero Heading ---------- */
+
+.hero-left h1 {
+
+    font-size: clamp(3rem, 6vw, 4.5rem);
+
+    line-height: 1.1;
+
+    margin-bottom: 1.5rem;
+
+    max-width: 700px;
+
+}
+
+
+/* ---------- Hero Paragraph ---------- */
+
+.hero-left p {
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 2.5rem;
+
+}
+
+
+/* ---------- Search Container ---------- */
+
+.hero-search {
+
+    display: flex;
+
+    align-items: center;
+
+    background: rgba(255,255,255,.95);
+
+    border-radius: var(--radius-pill);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-lg);
+
+    max-width: 620px;
+
+}
+
+
+/* ---------- Search Icon ---------- */
+
+.hero-search i {
+
+    padding-left: 1.5rem;
+
+    color: var(--text-light);
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ---------- Search Input ---------- */
+
+.hero-search input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    padding: 18px 20px;
+
+    font-size: 1rem;
+
+    color: var(--text-dark);
+
+}
+
+/* ---------- Placeholder ---------- */
+
+.hero-search input::placeholder {
+
+    color: var(--text-light);
+
+}
+
+/* ---------- Search Button ---------- */
+
+.hero-search button {
+
+    border: none;
+
+    background: var(--primary-green);
+
+    color: var(--white);
+
+    padding: 18px 28px;
+
+    font-weight: var(--semi-bold);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.hero-search button:hover {
+
+    background: var(--primary-green-dark);
+
+}
+/* ==========================================================
+   HERO
+   Part C - Spacing & Final Polish
+========================================================== */
+
+
+/* ---------- Hero Vertical Rhythm ---------- */
+
+.hero-left > * {
+
+    margin-left: 0;
+
+}
+
+.hero-tag {
+
+    margin-bottom: 1.25rem;
+
+}
+
+.hero-left h1 {
+
+    margin-bottom: 1.5rem;
+
+}
+
+.hero-left p {
+
+    margin-bottom: 2rem;
+
+}
+
+.hero-search {
+
+    margin-top: 1rem;
+
+}
+
+
+/* ---------- Hero Width ---------- */
+
+.hero-left {
+
+    width: 100%;
+
+}
+
+
+/* ---------- Hero Search Hover ---------- */
+
+.hero-search {
+
+    transition: var(--transition);
+
+}
+
+.hero-search:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-xl);
+
+}
+
+
+/* ---------- Search Button ---------- */
+
+.hero-search button {
+
+    white-space: nowrap;
+
+}
+
+
+/* ---------- Hero Container ---------- */
+
+.devices-hero .container {
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 80vh;
+
+}
+
+
+/* ---------- Better Text Balance ---------- */
+
+.hero-left p {
+
+    max-width: 600px;
+
+}
+
+
+/* ---------- Hero Fade In ---------- */
+
+.hero-content {
+
+    animation: fadeUp .8s ease;
+
+}
+>>>>>>> f13be36 (Local sync)
